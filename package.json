@@ -1,11 +1,27 @@
 {
   "name": "hapi-cors",
   "version": "1.0.0",
-  "description": "",
+  "description": "Enables cors for a hapijs app based on config.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jason Sanders <gabaroar@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabaroar/hapi-cors.git"
+  },
+  "keywords": [
+    "hapi",
+    "hapijs",
+    "cors"
+  ],
+  "bugs": {
+    "url": "https://github.com/gabaroar/hapi-cors/issues"
+  },
+  "homepage": "https://github.com/gabaroar/hapi-cors#readme",
+  "dependencies": {
+    "joi": "^7.0.1"
+  }
 }
