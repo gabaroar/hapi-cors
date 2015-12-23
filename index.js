@@ -5,13 +5,19 @@ exports.register = function(server, options, next){
   var schema = {
       origins: Joi.array().default(['*']),
       allowCredentials: Joi.string().valid('true', 'false').default('true'),
-      exposeHeaders: Joi.array().default(['content-type', 'content-length']),
+      exposeHeaders: Joi.array().default(['content-type', 'content-length'], 'Array of exposed headers'),
       maxAge: Joi.number().default(600),
       methods: Joi.array().default(['POST, GET, OPTIONS']),
       headers: Joi.array().default(['Accept', 'Content-Type', 'Authorization'])
   }
 
-  Joi.assert(options, schema);
+  Joi.validate(options, schema, function(err, value){
+    if(err){
+      throw err;
+    }
+
+    options = value;
+  });
 
   server.ext({
     type: 'onPreResponse',
