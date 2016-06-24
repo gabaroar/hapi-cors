@@ -28,7 +28,10 @@ exports.register = function(server, options, next){
 
       var response = request.response.isBoom ? request.response.output : request.response
 
-      response.headers['Access-Control-Allow-Origin'] = options.origins.join(', ');
+      // Use request's origin if it is present in whitelist
+      if (options.origins.indexOf(request.headers.origin) !== -1) {
+        response.headers['Access-Control-Allow-Origin'] = request.headers.origin;
+      }
       response.headers['Access-Control-Allow-Credentials'] = options.allowCredentials;
 
       if(request.method !== 'options'){
