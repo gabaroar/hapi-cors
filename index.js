@@ -37,8 +37,8 @@ exports.register = function(server, options, next){
 
       response.statusCode = 200
 
-      response.headers['access-control-expose-headers'] = options.exposeHeaders.join(', ');
-      response.headers['access-control-max-age'] = options.maxAge;
+      response.headers['Access-Control-Expose-Headers'] = options.exposeHeaders.join(', ');
+      response.headers['Access-Control-Max-Age'] = options.maxAge;
       response.headers['Access-Control-Allow-Methods'] = options.methods.join(', ');
       response.headers['Access-Control-Allow-Headers'] = options.headers.join(', ');
 
