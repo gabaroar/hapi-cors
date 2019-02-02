@@ -5,12 +5,12 @@ Enables cors for a hapijs app based on config.
 Default Options:  
 ```javascript
 {
-	origins: ['*'],
-	allowCredentials: 'true',
-	exposeHeaders: ['content-type', 'content-length'],
-	maxAge: 600,
-	methods: ['POST, GET, OPTIONS'],
-	headers: ['Accept', 'Content-Type', 'Authorization']
+    origins: ['*'],
+    allowCredentials: 'true',
+    exposeHeaders: ['content-type', 'content-length'],
+    maxAge: 600,
+    methods: ['POST, GET, OPTIONS'],
+    headers: ['Accept', 'Content-Type', 'Authorization']
 }
 ```
 	
