@@ -1,6 +1,6 @@
 {
   "name": "hapi-cors",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Enables cors for a hapijs app based on config.",
   "main": "index.js",
   "scripts": {

@@ -2,34 +2,55 @@
 
 Enables cors for a hapijs app based on config.
 
-   Default Options:
-   
-
-    {
-	    origins: ['*'],
-	    allowCredentials: 'true',
-	    exposeHeaders: ['content-type', 'content-length'],
-	    maxAge: 600,
-	    methods: ['POST, GET, OPTIONS'],
-        headers: ['Accept', 'Content-Type', 'Authorization']
-    }
+Default Options:  
+```javascript
+{
+    origins: ['*'],
+    allowCredentials: 'true',
+    exposeHeaders: ['content-type', 'content-length'],
+    maxAge: 600,
+    methods: ['POST, GET, OPTIONS'],
+    headers: ['Accept', 'Content-Type', 'Authorization']
+}
+```
+	
 
 Usage:
+```javascript
+'use strict'
 
-    var Hapi = require('hapi');
-    var server = new Hapi.Server();
-    
-    server.connection({port: 8080});
+const Hapi = require('hapi');
 
-	server.register({
-		register: require('hapi-cors'),
-		options: {
-			origins: ['http://localhost:4200']
-		}
-	}, function(err){
-		server.start(function(){
-			console.log(server.info.uri);
-		});
-	});
+const server = Hapi.server({
+    host: 'localhost',
+    port: 8000
+});
+
+server.route({
+    method: 'GET',
+    path: '/hello',
+    handler: function(request, h) {
+        return h.response({greeting: "Hello there!"});
+    }
+});
+
+const start = async function() {
+    try {
+        await server.register({
+            plugin: require('hapi-cors'),
+            options: {
+                origins: ['http://localhost:3000']
+			}
+        })
+
+        await server.start();
+    } catch(err) {
+        console.log(err);
+        process.exit(1);
+    }
+};
+
+start();
+```
 	    
 	    
