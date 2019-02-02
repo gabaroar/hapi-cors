@@ -22,32 +22,32 @@ Usage:
 const Hapi = require('hapi');
 
 const server = Hapi.server({
-	host: 'localhost',
-	port: 8000
+    host: 'localhost',
+    port: 8000
 });
 
 server.route({
-	method: 'GET',
-	path: '/hello',
-	handler: function(request, h) {
-		return h.response({greeting: "Hello there!"});
-	}
+    method: 'GET',
+    path: '/hello',
+    handler: function(request, h) {
+        return h.response({greeting: "Hello there!"});
+    }
 });
 
 const start = async function() {
-	try {
-		await server.register({
-			plugin: require('hapi-cors'),
-			options: {
-				origins: ['http://localhost:3000']
+    try {
+        await server.register({
+            plugin: require('hapi-cors'),
+            options: {
+                origins: ['http://localhost:3000']
 			}
-		})
+        })
 
-		await server.start();
-	} catch(err) {
-		console.log(err);
-		process.exit(1);
-	}
+        await server.start();
+    } catch(err) {
+        console.log(err);
+        process.exit(1);
+    }
 };
 
 start();
