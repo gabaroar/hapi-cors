@@ -86,7 +86,7 @@ const start = async function() {
             plugin: require('hapi-cors'),
             options: {
                 checkOrigin: checkOrigin
-			}
+            }
         })
 
         await server.start();
