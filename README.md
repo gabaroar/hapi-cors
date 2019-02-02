@@ -40,7 +40,7 @@ const start = async function() {
             plugin: require('hapi-cors'),
             options: {
                 origins: ['http://localhost:3000']
-			}
+            }
         })
 
         await server.start();
