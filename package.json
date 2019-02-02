@@ -4,7 +4,8 @@
   "description": "Enables cors for a hapijs app based on config.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "lab --assert code --coverage",
+    "test-cov-html": "lab -a code -r html -o coverage.html"
   },
   "author": "Jason Sanders <gabaroar@gmail.com>",
   "license": "ISC",
@@ -23,5 +24,10 @@
   "homepage": "https://github.com/gabaroar/hapi-cors#readme",
   "dependencies": {
     "joi": "^7.0.1"
+  },
+  "devDependencies": {
+    "code": "^5.2.4",
+    "hapi": "^18.0.1",
+    "lab": "^18.0.1"
   }
 }
