@@ -4,8 +4,9 @@
   "description": "Enables cors for a hapijs app based on config.",
   "main": "index.js",
   "scripts": {
-    "test": "lab --assert code --coverage",
-    "test-cov-html": "lab -a code -r html -o coverage.html"
+    "lint": "eslint --fix src/index.js",
+    "test": "lab --assert @hapi/code --coverage",
+    "test-cov-html": "lab -a @hapi/code -r html -o coverage.html"
   },
   "author": "Jason Sanders <gabaroar@gmail.com>",
   "license": "ISC",
@@ -23,11 +24,17 @@
   },
   "homepage": "https://github.com/gabaroar/hapi-cors#readme",
   "dependencies": {
-    "joi": "^7.0.1"
+    "@hapi/joi": "^15.0.3"
   },
   "devDependencies": {
-    "code": "^5.2.4",
-    "hapi": "^18.0.1",
-    "lab": "^18.0.1"
+    "@hapi/code": "^5.3.1",
+    "@hapi/hapi": "^18.3.1",
+    "@hapi/lab": "^19.0.1",
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-node": "^9.0.1",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0"
   }
 }

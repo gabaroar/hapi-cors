@@ -1,3 +1,3 @@
 module.exports = {
-  plugin: require("./lib/plugin")
-};
+  plugin: require('./lib/plugin')
+}
