@@ -1,5 +1,7 @@
 # hapi-cors
 
+## This package is no longer being supported.  Please migrate to the CORS functionality built into hapi.
+
 Enables cors for a hapijs app based on config.
 
 Default Options:  
